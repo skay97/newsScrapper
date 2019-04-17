@@ -1,0 +1,25 @@
+{
+  "name": "newsscrapper",
+  "version": "1.0.0",
+  "description": "An app that scrapes all the news that is fit to scrape",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skay97/newsScrapper.git"
+  },
+  "author": "Salman Karim (skay)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skay97/newsScrapper/issues"
+  },
+  "homepage": "https://github.com/skay97/newsScrapper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.2"
+  }
+}
