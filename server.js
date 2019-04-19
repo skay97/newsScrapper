@@ -28,35 +28,31 @@ mongoose.connect("mongodb://localhost/salmanKarim", { useNewUrlParser: true });
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
     // First, we grab the body of the html with axios
-    axios.get("https://www.reddit.com/search?q=news").then(function(response) {
+    axios.get("https://www.reddit.com/r/news/").then(function(response) {
       // Then, we load that into cheerio and save it to $ for a shorthand selector
       var $ = cheerio.load(response.data);
-      console.log(response.data)
+    //   console.log(response.data)
   
       // Now, we grab every h2 within an article tag, and do the following:
-      $("div.s1okktje-1").each(function(i, element) {
+      $("article>div[data-click-id=body]").each(function(i, element) {
         // Save an empty result object
         var result = {};
   
-        // Add the text and href of every link, and save them as properties of the result object
-        // where is the .title coming from?
         result.title = $(this).find("h2").text();
-        result.link = $(this)
-          .find(".SQnoC3ObvgnGjWt90zD9Z")
-          .attr("href");
+        result.link = $(this).find("div>a");
         console.log(result)
   
         // Create a new Article using the `result` object built from scraping
         //where is all this information being stored? how to access and delete it
-        db.Article.create(result)
-          .then(function(dbArticle) {
-            // View the added result in the console
-            console.log(dbArticle);
-          })
-          .catch(function(err) {
-            // If an error occurred, log it
-            console.log(err);
-          });
+        // db.Article.create(result)
+        //   .then(function(dbArticle) {
+        //     // View the added result in the console
+        //     console.log(dbArticle);
+        //   })
+        //   .catch(function(err) {
+        //     // If an error occurred, log it
+        //     console.log(err);
+        //   });
       })
   
       // Send a message to the client

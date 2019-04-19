@@ -1,8 +1,12 @@
-$.getJSON("/articles", function(data) {
+$(".scrapper").click(function () {
+  // empty container and obtain information
+  $("#articles").empty();
+  $.getJSON("/articles", function (data) {
     // For each one
-    for (var i = 0; i < data.length; i++) {
-      // Display the apropos information on the page
-      $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
-    //   $("#articles").append(`title: ${data[i].title}<br/>`)
+    for (var i = 74; i < 85; i++) {
+      // Display the information on the page
+      $("#articles").append(`<a href="${data[i].link}" target="_blank">Article: ${data[i].title}<br/><br/>`)
+
     }
   });
+})

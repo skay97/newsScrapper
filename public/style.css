@@ -1,0 +1,8 @@
+body{
+    /* background:blue; */
+}
+.jumbotron{
+    background: white;
+    color: red;
+    font-family: 'Raleway', sans-serif;
+}
