@@ -3,10 +3,14 @@ $(".scrapper").click(function () {
   $("#articles").empty();
   $.getJSON("/articles", function (data) {
     // For each one
-    for (var i = 74; i < 85; i++) {
+    for (var i = 208; i < 215; i++) {
       // Display the information on the page
-      $("#articles").append(`<a href="${data[i].link}" target="_blank">Article: ${data[i].title}<br/><br/>`)
-
+      $("#articles").append(
+        `<div class="card">
+        <h5 class="card-title text-center">Article</h5>
+        <div class="card-body"> <a href="${data[i].link}" target="_blank"> ${data[i].title} </div>
+        </div><br>`
+      )
     }
   });
 })
