@@ -1,6 +1,9 @@
 body{
     background:silver;
 }
+h1{
+    font-family: 'Playfair Display', serif;
+}
 .jumbotron{
     background: silver;
     color: darkslategray;
@@ -10,6 +13,7 @@ body{
     color: #6c757d;
     border-color: darkslategrey;
     border-radius: 20px;
+    font-family: 'Playfair Display', serif;
 }
 a {
     color: black;
@@ -26,6 +30,7 @@ a {
     border-color: darkslategray;
     background-color:darkslategray;
     color: white;
+    font-family: 'Domine', serif;
 }
 .card {
     position: relative;
@@ -40,4 +45,18 @@ a {
     border: 3px solid rgba(0,0,0,.125);
     border-radius: .25rem;
     border-color: darkslategray;
+}
+.navbar{
+    background: #999;
+    display: flex;
+    justify-content: center;
+    background-image: url("https://davidbalyeat.com/wp-content/uploads/arlington-memorial-bridge-lincoln-memorial-washington-monument-dc-high-definition-hd-professional-landscape-photography.jpg")
+}
+img {
+    max-height: 500px;
+    vertical-align: middle;
+    border-style: none;
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
 }
